@@ -14,6 +14,15 @@
 
 (function($) {
 
+// Find out if the console exists, and if it doesn't, disable logging.
+if (typeof window.console == 'undefined') {
+    window.console = {
+        log: function() {},
+        warn: function() {},
+        error: function() {},
+    };
+}
+
 $.extend($.fn, {
 	// http://docs.jquery.com/Plugins/Validation/validate
 	validate: function( options ) {
